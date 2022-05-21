@@ -24,29 +24,27 @@ public class Amazonlogin {
 	public void i_click_on_sign_in_button_and_wait_for_sign_in_page() {
 		 loginAct.logininbutton();
 	}
-	@When("^I enter email as \"([^\"]*)\"$")
-	public void iEnterEmailAs(String arg1) throws Throwable {
-		loginAct.sendKey(loginAct.email,arg1);
-}
 	@Then("I should see Sign In Page")
 	public void i_should_see_sign_in_page() {
 		loginAct.email.isDisplayed();
 	}
-
+	
+	@When("^I enter email as \"([^\"]*)\"$")
+	public void iEnterEmailAs(String arg1) throws Throwable {
+		loginAct.sendKey(loginAct.email,arg1);
+    }
+	@And("I Click on Continue button")
+	public void i_click_on_continue_button() {
+		loginAct.clickContinueButton();
+	}
+	
 	@And("^I enter password as this \"([^\"]*)\"$")
 	public void iEnterPasswordAsThis(String arg1) throws Throwable {
 		loginAct.sendKey(loginAct.password,arg1);
 	}
 
-	@When("I Click on Continue button")
-	public void i_click_on_continue_button() {
-		loginAct.clickContinueButton();
-	}
-
-	
-		
-@When("click on login button")
-	public void click_on_login_button() {
+	@And("I click on login button")
+	public void i_click_on_login_button() {
 		loginAct.signinButton();
 	}
 
@@ -55,13 +53,10 @@ public class Amazonlogin {
 		loginAct.SignInfromNav();
 	}
 
-	@And("^I Click on  a Sign out button$")
-	public void iClickOnASignOutButton() throws Throwable {
+	@Then("I Click on Sign out button")
+	public void i_click_on_sign_out_button() {
 		loginAct.logoutBtn();
 	}
-
-	
-
 	
 
 	

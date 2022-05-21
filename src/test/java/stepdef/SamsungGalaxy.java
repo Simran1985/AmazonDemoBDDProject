@@ -13,65 +13,55 @@ import pom.SamsungAction;
 
 public class SamsungGalaxy {
 	
-	SamsungAction Act= new SamsungAction(DriverManager.getdriver());
-	
-	@Given("I have a browser opened and url is navigated")
-	public void i_have_a_browser_opened_and_url_is_navigated() {
+	SamsungAction New= new SamsungAction(DriverManager.getdriver());
+	@Given("I have opened browser and url is navigated")
+	public void i_have_opened_browser_and_url_is_navigated() {
 		String actualurl= DriverManager.getdriver().getCurrentUrl();
 		 Assert.assertTrue("This is not correct url", actualurl.contains("https://www.amazon.ca/"));
 			Reporter.log("This is expected url >> "+ actualurl);
 	}
-	
-	
-	    @When("I search for a product as {string}")
-		public void i_search_for_a_product_as(String string) {
-	    	Act.sendKey(Act.searchbox,string);
-	    }
+
+	@When("I search for product as {string}")
+	public void i_search_for_product_as(String string) {
+	New.sendKey(New.searchbox,string);
+	}
 	
 
 	@Then("^I click on search button$")
 	public void iClickOnSearchButton() throws Throwable {
-		Act.searchbutton();
+	New.searchbutton();
 	}
 
 
 	@Then("^I want to select a phone \"([^\"]*)\"$")
 	public void iWantToSelectAPhone(String arg1) throws Throwable {
-		Act.clickonphone();
+	New.clickonphone();
 	}
 
- @Then("^I want to click on price$")
-public void iWantToClickOnPrice() throws Throwable {
-	Act.clickprice();
+    @Then("^I want to click on price$")
+    public void iWantToClickOnPrice() throws Throwable {
+	New.clickprice();
 	System.out.println("get a price of product after clicking");
-}
+    }
 
-@Given("^I want to click on Select Delievery Location$")
-public void iWantToClickOnSelectDelieveryLocation() throws Throwable {
-	Act.SelectDelieveryLocation();
+    @Then("^I want to click on Select Delivery Location$")
+	public void iWantToClickOnSelectDeliveryLocation() throws Throwable {
+	New.SelectDelieveryLocation();	
 	}
+    
+    @Then("I Sendkeys in postal code field {string}")
+    public void i_sendkeys_in_postal_code_field(String string) {
+    New.sendKey(New.PostalCode,string); 
+    }
 
-
-
-
-
-
-@And("^Sendkeys in postal code field \"([^\"]*)\"$")
-public void sendkeysInPostalCodeField(String arg1) throws Throwable {
-	Act.sendKey(Act.PostalCode,arg1);
-	}
-
-
-@Then("^I want to click on Apply$")
-public void iWantToClickOnApply() throws Throwable {
-Act.Apply();
+    @Then("^I want to click on Apply$")
+    public void iWantToClickOnApply() throws Throwable {
+    New.Apply();
 
 }
 
-
-
+	
 }
-
 
 
 	

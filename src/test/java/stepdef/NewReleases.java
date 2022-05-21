@@ -16,7 +16,7 @@ import pom.WishlistAction;
 
 public class NewReleases {
 	
-	 NewReleasesAction Act= new   NewReleasesAction(DriverManager.getdriver());
+	 NewReleasesAction abc= new   NewReleasesAction(DriverManager.getdriver());
 
 
 
@@ -36,7 +36,7 @@ public void url_is_navigated() {
 
 @Then("I want to click on new releases")
 public void i_want_to_click_on_new_releases() {
-    Act.NewReleasestile();
+    abc.NewReleasestile();
 }
 
 @Then("validate the page")

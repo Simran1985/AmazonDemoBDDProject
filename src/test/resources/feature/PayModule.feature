@@ -1,16 +1,15 @@
-
-Feature: Title Pay Module
- 
-  @PayModule
-  Scenario: I want to validate Pay Module
-    Given  Browser opened and url is navigated
-     Then Searched for  product as  "infuser water bottle"
-    Then click search button
-   And Iclicked on bottle
-   Then Add to cart
+Feature: Pay Module
+@PayOption
+Scenario: I want to validate Pay Module
+   Given I opened brower and url is navigated
+   Then I searched for product as"iphone x"
+   Then I click search button
+   And I selected phone "iphone x"
+   Then I add to cart
+   Then  I proceed to checkout
+   Then I click on Sign in
+   Then I enter email "jatys1990@gmail.com"
+   And I click on continue button
+   Then I enter password "Pollini312890"
    
-   Then Proceed to checkout
-   Then Enter your email "hp_sandhu@hotmail.com"
-   And click on continue buttonn
-   Then Password "Nabhaite301!"
-   And click Signin
+   

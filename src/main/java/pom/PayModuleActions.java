@@ -21,21 +21,19 @@ public class PayModuleActions {
 	
 	@CacheLookup
 	@FindBy(xpath="//*[@id='twotabsearchtextbox']")
-		public WebElement searchbox;
+	public WebElement searchbox;
 
 	@CacheLookup
 	@FindBy(xpath="//*[@id='nav-search-submit-button']")
 	public WebElement searchbutton;
 	
-	
 	@CacheLookup
-	@FindBy(xpath="//span[contains(text(),'Drinking Water Bottle 32')]")
-	public WebElement Bottle;
+	@FindBy(xpath="//span[contains(text(),'Apple iPhone X 64GB Unlocked GSM Phone ')]")
+	public WebElement clickonphone;
 	
 	@CacheLookup
 	@FindBy(xpath="//*[@id='add-to-cart-button']")
 	public WebElement AddCart;
-	
 	
 	@CacheLookup
 	@FindBy(xpath="//input[@name='proceedToRetailCheckout']")
@@ -44,13 +42,14 @@ public class PayModuleActions {
 	@CacheLookup
 	@FindBy(xpath="//input[@type='email']")
 	public WebElement email;
+	
 	@CacheLookup
 	@FindBy(xpath="//input[@id='continue']")
 	WebElement Continue;
+	
 	@CacheLookup
 	@FindBy(xpath="//input[@type='password']")
 	public WebElement password;
-
 
 	@CacheLookup
 	@FindBy(xpath="//input[@id='signInSubmit']")
@@ -65,14 +64,10 @@ public class PayModuleActions {
 		
 	}
 	
-	public void searchbutton() {
+public void searchbutton() {
 		searchbutton.click();}
 	
-	public void  Waterbottle() {
-		Bottle.click();
-	
-	}
-	public void Addtocart() {
+public void Addtocart() {
 		AddCart.click();
 }
 public void  Checkout() {
@@ -82,9 +77,16 @@ public void  Checkout() {
 	Continue.click();
 
 }
-public void loginButtonn(){
+public void loginButton(){
 	loginButton.click();
 }
+
+public void clickonphone() {
+
 	
-}	
+	
+}
+}
+	
+
 	

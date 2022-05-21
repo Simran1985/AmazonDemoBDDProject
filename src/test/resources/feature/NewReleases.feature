@@ -1,8 +1,6 @@
-
+Feature: Amazon Navigation Link of New Releases
 @NewReleases
-Feature: Navigate Amazon
- @NewReleases
-  Scenario:ValidateNewReleases
+Scenario:ValidateNewReleases
   Given I have a browser open
   And   url is navigated
   Then I want to click on new releases 
